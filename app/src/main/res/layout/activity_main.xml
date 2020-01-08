@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E1E1E1"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/motionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        app:layoutDescription="@xml/activity_main_scene"
+        tools:context=".MainActivity">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.66" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="1" />
+
+        <ImageView
+            android:id="@+id/iv1"
+            style="@style/btn"
+            android:src="@drawable/ic_2"
+            app:layout_constraintEnd_toStartOf="@+id/gl1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv2"
+            style="@style/btn"
+            android:src="@drawable/ic_1"
+            app:layout_constraintEnd_toStartOf="@+id/gl2"
+            app:layout_constraintStart_toStartOf="@+id/gl1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv3"
+            style="@style/btn"
+            android:src="@drawable/ic_3"
+            app:layout_constraintEnd_toStartOf="@+id/gl3"
+            app:layout_constraintStart_toStartOf="@+id/gl2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv4"
+            style="@style/btn"
+            android:layout_marginTop="20dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_5"
+            app:layout_constraintEnd_toStartOf="@+id/gl1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv1" />
+
+        <ImageView
+            android:id="@+id/iv5"
+            style="@style/btn"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_4"
+            app:layout_constraintEnd_toStartOf="@+id/gl2"
+            app:layout_constraintStart_toStartOf="@+id/gl1"
+            app:layout_constraintTop_toBottomOf="@+id/iv2" />
+
+        <ImageView
+            android:id="@+id/iv6"
+            style="@style/btn"
+            android:src="@drawable/ic_6"
+            app:layout_constraintEnd_toStartOf="@+id/gl3"
+            app:layout_constraintStart_toStartOf="@+id/gl2"
+            app:layout_constraintTop_toTopOf="@+id/iv5" />
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+    <Button
+        android:id="@+id/btnSwitch"
+        android:text="Toggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="50dp" />
+
+</LinearLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+       <KeyFrameSet>
+           <KeyPosition
+               motion:motionTarget="@+id/iv4"
+               motion:framePosition="40"
+               motion:percentX="0.8" />
+           <KeyAttribute
+               motion:motionTarget="@+id/iv5"
+               motion:framePosition="50"
+               android:alpha="0" />
+           <KeyAttribute
+               motion:motionTarget="@+id/iv6"
+               motion:framePosition="50"
+               android:alpha="0" />
+       </KeyFrameSet>
+        <OnSwipe motion:dragDirection="dragUp" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:layout_height="match_parent"
+            motion:layout_constraintGuide_percent="0.25"
+            android:layout_width="match_parent"
+            android:id="@+id/gl1" />
+        <Constraint
+            android:id="@+id/gl2"
+            motion:layout_constraintGuide_percent="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <Constraint
+            android:id="@+id/gl3"
+            motion:layout_constraintGuide_percent="0.75"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <Constraint android:id="@+id/iv4"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="@id/gl3"
+            motion:layout_constraintBottom_toBottomOf="@+id/iv3"
+            android:layout_width="wrap_content" />
+        <Constraint
+            motion:layout_constraintEnd_toStartOf="@+id/gl2"
+            motion:layout_constraintStart_toStartOf="@+id/gl1"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/iv5"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:alpha="0"
+            motion:layout_constraintHorizontal_bias="0.333" />
+        <Constraint
+            motion:layout_constraintEnd_toStartOf="@+id/gl3"
+            motion:layout_constraintStart_toStartOf="@+id/gl2"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/iv6"
+            android:alpha="0"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+    </ConstraintSet>
+</MotionScene>
